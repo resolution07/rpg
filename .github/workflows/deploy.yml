@@ -1,0 +1,52 @@
+name: Minecraft Server CI/CD
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  stop-server:
+    name: Stopping server
+    runs-on: ubuntu-latest
+    steps:
+      - uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: screen -S ${{ secrets.SCREEN_ID }} -X stuff 'stop\n'
+  deploy:
+    needs: [ stop-server ]
+    name: Run deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd ~/server
+            git checkout master
+            git pull origin master
+  start-server:
+    needs: [ deploy ]
+    name: Starting server
+    runs-on: ubuntu-latest
+    steps:
+      - uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: screen -S ${{ secrets.SCREEN_ID }} -X stuff 'java -jar forge-1.12.2-14.23.5.2860.jar -o false nogui\n'
+  done:
+    needs: [ start-server ]
+    name: Done
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Done!"

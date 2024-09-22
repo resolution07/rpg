@@ -1,0 +1,32 @@
+[13:49:11] [Server thread/INFO]: Starting minecraft server version 1.12.2
+[13:49:11] [Server thread/INFO]: Loading properties
+[13:49:11] [Server thread/WARN]: server.properties does not exist
+[13:49:11] [Server thread/INFO]: Generating new properties file
+[13:49:11] [Server thread/INFO]: Default game type: SURVIVAL
+[13:49:11] [Server thread/INFO]: Generating keypair
+[13:49:11] [Server thread/INFO]: Starting Minecraft server on *:25565
+[13:49:11] [Server thread/INFO]: Using epoll channel type
+[13:49:11] [Server thread/INFO]: Preparing level "world"
+[13:49:11] [Server thread/INFO]: Loaded 488 advancements
+[13:49:11] [Server thread/INFO]: Preparing start region for level 0
+[13:49:12] [Server thread/INFO]: Preparing spawn area: 18%
+[13:49:13] [Server thread/INFO]: Preparing spawn area: 36%
+[13:49:14] [Server thread/INFO]: Preparing spawn area: 53%
+[13:49:15] [Server thread/INFO]: Preparing spawn area: 67%
+[13:49:16] [Server thread/INFO]: Preparing spawn area: 86%
+[13:49:17] [Server thread/INFO]: Done (6.126s)! For help, type "help" or "?"
+[16:36:36] [Server Shutdown Thread/INFO]: Stopping server
+[16:36:36] [Server console handler/ERROR]: Exception handling console input
+java.io.IOException: Input/output error
+	at java.io.FileInputStream.readBytes(Native Method) ~[?:1.8.0_402]
+	at java.io.FileInputStream.read(FileInputStream.java:255) ~[?:1.8.0_402]
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:284) ~[?:1.8.0_402]
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345) ~[?:1.8.0_402]
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284) ~[?:1.8.0_402]
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326) ~[?:1.8.0_402]
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178) ~[?:1.8.0_402]
+	at java.io.InputStreamReader.read(InputStreamReader.java:184) ~[?:1.8.0_402]
+	at java.io.BufferedReader.fill(BufferedReader.java:161) ~[?:1.8.0_402]
+	at java.io.BufferedReader.readLine(BufferedReader.java:324) ~[?:1.8.0_402]
+	at java.io.BufferedReader.readLine(BufferedReader.java:389) ~[?:1.8.0_402]
+	at nz$2.run(SourceFile:100) [minecraft_server.1.12.2.jar:?]

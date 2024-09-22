@@ -8,6 +8,6 @@ WORKDIR /server
 
 COPY . .
 
-RUN cp -rf server.properties.data server.propertie
+RUN cp -rf server.properties.data server.properties
 
 CMD ["java", "-Xmx8192M", "-Xms8192M", "-jar", "minecraft_server.1.12.2.jar", "nogui"]

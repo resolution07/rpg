@@ -10,6 +10,4 @@ COPY . .
 
 RUN cp server.properties.data server.propertie
 
-EXPOSE 25565
-
-CMD ["java", "-Xmx1024M", "-Xms1024M", "-jar", "minecraft_server.1.12.2.jar", "nogui"]
+CMD ["java", "-Xmx8192M", "-Xms8192M", "-jar", "minecraft_server.1.12.2.jar", "nogui"]

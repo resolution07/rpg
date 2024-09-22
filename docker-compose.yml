@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  minecraft-server:
+    build: .
+    volumes:
+      - './world:/server/world'
+    ports:
+      - "25565:25565"

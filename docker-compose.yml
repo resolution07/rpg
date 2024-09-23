@@ -6,3 +6,4 @@ services:
       - './world:/server/world'
     ports:
       - "25565:25565"
+    restart: unless-stopped

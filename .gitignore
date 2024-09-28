@@ -8,3 +8,4 @@
 !Dockerfile
 !docker-compose.yml
 !.server.properties
+!mohist-1.12.2-345-server.jar

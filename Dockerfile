@@ -6,4 +6,4 @@ COPY . .
 
 RUN cp -rf .server.properties server.properties
 
-CMD ["java", "-Xmx8192M", "-Xms8192M", "-jar", "forge-1.12.2-14.23.5.2860.jar", "-o", "false", "nogui"]
+CMD ["java", "-Xmx8192M", "-Xms8192M", "-jar", "mohist-1.12.2-345-server.jar", "-o", "false", "nogui"]

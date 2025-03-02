@@ -1,6 +1,8 @@
 services:
   minecraft-server:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - './world:/server/world'
     ports:
